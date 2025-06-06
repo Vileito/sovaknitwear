@@ -1,17 +1,3 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: #333;
-}
-
 /* Hero Section (Video Background) */
 .hero {
     position: relative;
@@ -19,6 +5,7 @@ body {
     overflow: hidden;
 }
 
+/* Video fons */
 #background-video {
     position: absolute;
     top: 0;
@@ -29,16 +16,18 @@ body {
     z-index: -1;
 }
 
+/* Logotips */
 .logo {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: 1000px;
+    transform: translate(-50%, -50%); /* Nodrošina centrēšanu */
+    width: 1000px; /* Lielāks izmērs */
+    height: auto; /* Saglabā proporcijas */
     z-index: 1;
 }
 
-/* Navigation Bar */
+/* Navigācijas josla */
 .navbar {
     position: absolute;
     top: 20px;
@@ -67,7 +56,7 @@ body {
     text-decoration: underline;
 }
 
-/* Section Styles */
+/* Sadaļu stili */
 section {
     padding: 60px 20px;
     text-align: center;
@@ -83,7 +72,7 @@ section p {
     color: #ccc;
 }
 
-/* Footer */
+/* Pēdējais kājis */
 footer {
     text-align: center;
     padding: 20px;
