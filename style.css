@@ -21,9 +21,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Nodrošina centrēšanu */
-    width: 1000px; /* Lielāks izmērs */
-    height: auto; /* Saglabā proporcijas */
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: auto;
     z-index: 1;
 }
 
@@ -44,7 +44,7 @@
 .navbar li {
     font-size: 18px;
     font-weight: bold;
-    color: #ff7f50;
+    color: #ff7f50; /* ← rozīgi oranža krāsa (CORAL) */
 }
 
 .navbar a {
@@ -79,3 +79,4 @@ footer {
     background-color: #333;
     color: #fff;
 }
+
