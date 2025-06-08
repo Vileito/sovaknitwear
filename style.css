@@ -88,9 +88,8 @@ section p {
 
 /* Produktu konteineris */
 .product-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trīs kolonnas */
     gap: 20px;
     padding: 20px 0;
 }
@@ -99,7 +98,6 @@ section p {
     background-color: white;
     border-radius: 10px;
     padding: 20px;
-    width: 30%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -184,4 +182,3 @@ footer {
     background-color: #333;
     color: white;
 }
-
