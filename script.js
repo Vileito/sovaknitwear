@@ -1,35 +1,38 @@
 let cart = [];
-let totalPrice = 0;
 
-function addToCart(productName, productPrice) {
-    cart.push({ name: productName, price: productPrice });
-    totalPrice += productPrice;
-    updateCart();
+function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    updateCartPopup();
 }
 
 function removeFromCart(productName) {
     cart = cart.filter(item => item.name !== productName);
-    totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-    updateCart();
+    updateCartPopup();
 }
 
-function updateCart() {
+function updateCartPopup() {
     const cartItems = document.getElementById('cart-items');
-    const totalPriceElem = document.getElementById('total-price');
-
-    cartItems.innerHTML = '';
-
+    const totalPrice = document.getElementById('total-price');
+    let total = 0;
+    
+    cartItems.innerHTML = '';  // Iztīrām iepriekšējos elementus
+    
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `${item.name} - €${item.price.toFixed(2)} 
-                        <span onclick="removeFromCart('${item.name}')" style="cursor:pointer;">❌</span>`;
+        li.innerHTML = `${item.name} - €${item.price.toFixed(2)} <button onclick="removeFromCart('${item.name}')">❌</button>`;
         cartItems.appendChild(li);
+        total += item.price;
     });
-
-    totalPriceElem.innerText = `Kopā: €${totalPrice.toFixed(2)}`;
-    document.getElementById('cart-popup').style.display = 'block';
+    
+    totalPrice.innerHTML = `Kopā: €${total.toFixed(2)}`;
+    
+    // Parādām groza popup, ja ir preces
+    document.getElementById('cart-popup').style.display = cart.length > 0 ? 'block' : 'none';
 }
 
 function checkout() {
-    alert('Veicot maksājumu...');
+    alert('Paldies par pirkumu!');
+    cart = [];  // Tīram grozu pēc maksājuma
+    updateCartPopup();  // Atjaunojam groza skatījumu
 }
+
