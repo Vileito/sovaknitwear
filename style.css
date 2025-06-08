@@ -42,7 +42,7 @@
 .navbar li {
     font-size: 18px;
     font-weight: bold;
-    color: #ff7f50; /* Oranža krāsa */
+    color: #e01b8e; /* Oranža krāsa */
 }
 
 .navbar a {
@@ -81,7 +81,7 @@ section p {
 .product {
     width: 30%;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #e01b8e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -123,14 +123,14 @@ section p {
 
 button {
     padding: 10px 20px;
-    background-color: #ff7f50;
+    background-color: #e01b8e;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #ff6f3d;
+    background-color: #e01b8e;
 }
 
 /* Pēdas */
