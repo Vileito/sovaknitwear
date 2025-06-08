@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #e01b8e;
+    background-color: #000000;
 }
 
 /* Navigācijas josla */
@@ -122,7 +122,7 @@ section p {
 
 .product .add-to-cart {
     padding: 10px 20px;
-    background-color: #e01b8e;
+    background-color: white;
     color: white;
     border: none;
     border-radius: 5px;
