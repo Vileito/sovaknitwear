@@ -164,8 +164,8 @@ section p {
 
 .cart-popup button {
     padding: 10px 20px;
-    background-color: #e01b8e;
-    color: #000000;
+    background-color: #000000;
+    color: #e01b8e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
