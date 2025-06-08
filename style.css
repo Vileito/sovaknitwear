@@ -1,40 +1,11 @@
-/* Hero Section (Video Background) */
-.hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
+/* Vispārējie stili */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Video fons */
-#background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/* Logotips */
-.logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: auto;
-    z-index: 1;
-}
-
-/* Navigācijas josla */
-.navbar {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 10;
-}
-
+/* Navigācija */
 .navbar ul {
     list-style: none;
     display: flex;
@@ -44,7 +15,7 @@
 .navbar li {
     font-size: 18px;
     font-weight: bold;
-    color: #ff7f50; /* ← rozīgi oranža krāsa (CORAL) */
+    color: #ff7f50; /* Rozīgi oranža */
 }
 
 .navbar a {
@@ -56,27 +27,110 @@
     text-decoration: underline;
 }
 
-/* Sadaļu stili */
-section {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* Pēdējais kājis */
-footer {
-    text-align: center;
+/* Veikala preces */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
-    background-color: #333;
-    color: #fff;
+}
+
+.product {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.product-name {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #ff7f50;
+    margin-top: 10px;
+}
+
+.add-to-cart {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #ff5722;
+}
+
+/* Groza ikona */
+#cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#cart-icon img {
+    width: 40px;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Groza popup */
+.cart-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+button {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff5722;
 }
 
