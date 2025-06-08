@@ -1,4 +1,11 @@
-/* Hero Section (Video Background) */
+/* Vispārējie stili */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero sekcija (Video fons) */
 .hero {
     position: relative;
     height: 100vh;
@@ -20,70 +27,93 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
     text-align: center;
-    font-family: 'Arial', sans-serif;
+    color: white;
 }
 
-.hero h1 {
-    font-size: 48px;
-    font-weight: bold;
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
 }
 
-.hero p {
-    font-size: 24px;
+/* Navigācija */
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
 }
 
-/* Preču attēlošana */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.navbar ul {
+    list-style: none;
+    display: flex;
     gap: 20px;
-    padding: 20px;
+}
+
+.navbar li {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff7f50;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Produkti */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
 }
 
 .product {
-    background-color: #f8f8f8;
+    width: 30%;
+    text-align: center;
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product-img {
+.product img {
     width: 100%;
     height: auto;
-    max-height: 300px;
-    object-fit: cover;
+    border-radius: 10px;
 }
 
-.product h3 {
+.product-name {
     font-size: 20px;
-    margin-top: 10px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-.price {
+.product-price {
     font-size: 18px;
     color: #ff7f50;
-    margin-top: 10px;
 }
 
 .add-to-cart {
     background-color: #ff7f50;
-    color: white;
-    padding: 10px;
     border: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
 .add-to-cart:hover {
-    background-color: #ff5722;
+    background-color: #e76f39;
 }
 
-/* Groza popup */
-#cart-popup {
-    display: none;
+/* Groza Popup */
+.cart-popup {
     position: fixed;
     top: 20%;
     right: 20px;
@@ -91,18 +121,30 @@
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    display: none;
+    z-index: 10;
 }
 
-button {
-    cursor: pointer;
+.cart-popup ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Pēdas */
+.cart-popup li {
+    margin-bottom: 10px;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 footer {
     text-align: center;
     padding: 20px;
     background-color: #333;
-    color: #fff;
+    color: white;
 }
+
 
 
