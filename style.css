@@ -7,7 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #e01b8e;
 }
 
 /* Navigācijas josla */
@@ -116,13 +116,13 @@ section p {
 
 .product .price {
     font-size: 18px;
-    color: #ff7f50;
+    color: #e01b8e;
     margin: 10px 0;
 }
 
 .product .add-to-cart {
     padding: 10px 20px;
-    background-color: #ff7f50;
+    background-color: #e01b8e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -130,7 +130,7 @@ section p {
 }
 
 .product .add-to-cart:hover {
-    background-color: #e76f39;
+    background-color: #e01b8e;
 }
 
 /* Grozs pop-up */
@@ -164,7 +164,7 @@ section p {
 
 .cart-popup button {
     padding: 10px 20px;
-    background-color: #ff7f50;
+    background-color: #e01b8e;
     color: white;
     border: none;
     border-radius: 5px;
@@ -172,7 +172,7 @@ section p {
 }
 
 .cart-popup button:hover {
-    background-color: #e76f39;
+    background-color: #e01b8e;
 }
 
 /* Pēdas (footer) */
