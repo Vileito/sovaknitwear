@@ -31,7 +31,7 @@ body {
 .navbar li {
     font-size: 18px;
     font-weight: bold;
-    color: white;
+    color: #e01b8e;
 }
 
 .navbar a {
@@ -123,7 +123,7 @@ section p {
 .product .add-to-cart {
     padding: 10px 20px;
     background-color: #e01b8e;
-    color: white;
+    color: #e01b8e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -138,7 +138,7 @@ section p {
     position: fixed;
     top: 20%;
     right: 20px;
-    background-color: white;
+    background-color: #e01b8e;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -165,7 +165,7 @@ section p {
 .cart-popup button {
     padding: 10px 20px;
     background-color: #e01b8e;
-    color: white;
+    color: #e01b8e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
