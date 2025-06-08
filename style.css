@@ -123,7 +123,7 @@ section p {
 .product .add-to-cart {
     padding: 10px 20px;
     background-color: white;
-    color: white;
+    color: #e01b8e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -164,15 +164,15 @@ section p {
 
 .cart-popup button {
     padding: 10px 20px;
-    background-color: #000000;
-    color: #e01b8e;
+    background-color: #e01b8e;
+    color: #fcfcfc;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .cart-popup button:hover {
-    background-color: #e01b8e;
+    background-color: #000000;
 }
 
 /* Pēdas (footer) */
