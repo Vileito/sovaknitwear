@@ -2,8 +2,16 @@ let cart = [];
 let totalPrice = 0;
 
 function addToCart(productName, productPrice) {
+    // Pievieno preci grozam
     cart.push({ name: productName, price: productPrice });
     totalPrice += productPrice;
+    updateCart();
+}
+
+function removeFromCart(productName) {
+    // Noņem preci no groza
+    cart = cart.filter(item => item.name !== productName);
+    totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
     updateCart();
 }
 
@@ -17,18 +25,12 @@ function updateCart() {
 
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.innerText = `${item.name} - €${item.price.toFixed(2)} 
-                        <span onclick="removeFromCart('${item.name}')">❌</span>`;
+        li.innerHTML = `${item.name} - €${item.price.toFixed(2)} 
+                        <span onclick="removeFromCart('${item.name}')" style="cursor:pointer;">❌</span>`;
         cartItems.appendChild(li);
     });
 
     totalPriceElem.innerText = `Kopā: €${totalPrice.toFixed(2)}`;
-}
-
-function removeFromCart(productName) {
-    cart = cart.filter(item => item.name !== productName);
-    totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-    updateCart();
 }
 
 function toggleCart() {
