@@ -1,20 +1,21 @@
 let cart = [];
 let totalPrice = 0;
 
+// Funkcija preces pievienošanai grozam
 function addToCart(productName, productPrice) {
-    // Pievieno preci grozam
     cart.push({ name: productName, price: productPrice });
     totalPrice += productPrice;
     updateCart();
 }
 
+// Funkcija preces izņemšanai no groza
 function removeFromCart(productName) {
-    // Noņem preci no groza
     cart = cart.filter(item => item.name !== productName);
     totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
     updateCart();
 }
 
+// Funkcija groza atjaunināšanai
 function updateCart() {
     const cartCount = document.getElementById('cart-count');
     const cartItems = document.getElementById('cart-items');
@@ -33,6 +34,7 @@ function updateCart() {
     totalPriceElem.innerText = `Kopā: €${totalPrice.toFixed(2)}`;
 }
 
+// Funkcija groza parādīšanai/slēpšanai
 function toggleCart() {
     const cartPopup = document.getElementById('cart-popup');
     cartPopup.style.display = cartPopup.style.display === 'none' || !cartPopup.style.display ? 'block' : 'none';
