@@ -30,12 +30,6 @@ function updateCart() {
     document.getElementById('cart-popup').style.display = 'block';
 }
 
-function toggleCart() {
-    const cartPopup = document.getElementById('cart-popup');
-    cartPopup.style.display = cartPopup.style.display === 'none' || !cartPopup.style.display ? 'block' : 'none';
-}
-
 function checkout() {
     alert('Veicot maksājumu...');
 }
-
