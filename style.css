@@ -116,14 +116,14 @@ section p {
 
 .product .price {
     font-size: 18px;
-    color: #e01b8e;
+    color: white;
     margin: 10px 0;
 }
 
 .product .add-to-cart {
     padding: 10px 20px;
     background-color: #e01b8e;
-    color: #e01b8e;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -138,7 +138,7 @@ section p {
     position: fixed;
     top: 20%;
     right: 20px;
-    background-color: #e01b8e;
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
