@@ -1,28 +1,56 @@
-<section id="veikals">
-    <h2>Veikals</h2>
-    <div class="product-container">
-        <div class="product">
-            <img src="jaka.jpg" alt="Jaka" class="product-img">
-            <p class="product-name">Silta jaka</p>
-            <p class="product-price">€50.00</p>
-            <button class="add-to-cart" onclick="addToCart('Silta jaka', 50)">Pievienot grozam</button>
-        </div>
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sova Knitwear - Interneta veikals</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-        <div class="product">
-            <img src="jaka2.jpg" alt="Jaka" class="product-img">
-            <p class="product-name">Eleganta jaka</p>
-            <p class="product-price">€60.00</p>
-            <button class="add-to-cart" onclick="addToCart('Eleganta jaka', 60)">Pievienot grozam</button>
+    <!-- Hero sekcija ar video fonu -->
+    <section class="hero">
+        <video autoplay muted loop id="background-video">
+            <source src="video.mp4" type="video/mp4">
+            Tava pārlūkprogramma neatbalsta video tagu.
+        </video>
+        <div class="hero-content">
+            <h1>Laipni lūdzam Sova Knitwear!</h1>
+            <p>Izvēlies savus iecienītākos adījumus mūsu interneta veikalā.</p>
         </div>
+    </section>
 
-        <div class="product">
-            <img src="jaka3.jpg" alt="Jaka" class="product-img">
-            <p class="product-name">Adīta jaka</p>
-            <p class="product-price">€45.00</p>
-            <button class="add-to-cart" onclick="addToCart('Adīta jaka', 45)">Pievienot grozam</button>
+    <!-- Veikala sekcija -->
+    <section id="veikals">
+        <h2>Veikals</h2>
+        <div class="product-container">
+            <!-- Šeit tiks ievietotas preces -->
+            <div class="product">
+                <img src="product1.jpg" alt="Produkts 1" class="product-img">
+                <h3>Produkta nosaukums</h3>
+                <p class="price">€50.00</p>
+                <button class="add-to-cart">Pievienot grozam</button>
+            </div>
+            <!-- Vairāk produktu šeit -->
+        </div>
+    </section>
+
+    <!-- Groza sekcija -->
+    <div id="cart">
+        <button onclick="toggleCart()">Grozs</button>
+        <div id="cart-popup" class="cart-popup">
+            <h3>Groza saturs</h3>
+            <ul id="cart-items"></ul>
+            <p id="total-price">Kopā: €0.00</p>
+            <button onclick="checkout()">Veikt maksājumu</button>
         </div>
     </div>
-</section>
 
+    <footer>
+        <p>&copy; 2025 Sova Knitwear. Visi tiesības aizsargātas.</p>
+    </footer>
 
+    <script src="script.js"></script>
+</body>
+</html>
 
