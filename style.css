@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<html lang="lv">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Veikals</title>
-<style>
-/* Vispārīgie stili */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-}
-
-/* Produktu konteineris */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trīs kolonnas */
-    gap: 20px;
-    padding: 20px 0;
-}
-
+/* Produkta bloks */
 .product {
     background-color: white;
     border-radius: 10px;
@@ -51,11 +25,11 @@ body {
     margin: 10px 0;
 }
 
-/* Poga "Pievienot grozam" */
+/* Pievienot grozam pogas stils */
 .product .add-to-cart {
-    padding: 12px 24px;
-    background-color: #e01b8e; /* rozā fons */
-    color: black;              /* melns teksts */
+    padding: 10px 20px;
+    background-color: white;       /* balts fons */
+    color: #e01b8e;                /* rozā teksts */
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -65,13 +39,8 @@ body {
 }
 
 .product .add-to-cart:hover {
-    background-color: #f36ecb; /* gaišāks rozā tonis hover */
-    color: black;              /* teksts paliek melns */
-}
-
-.product .add-to-cart:active {
-    background-color: #c41570; /* tumšāks rozā klikšķa laikā */
-    color: black;
+    background-color: #e01b8e;     /* rozā fons hover */
+    color: white;                  /* balts teksts hover */
 }
 
 /* Grozs pop-up */
@@ -83,24 +52,40 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 320px;
+    max-height: 60vh;
+    overflow-y: auto;
     display: none;
-    z-index: 20;
+    z-index: 9999;
 }
 
 .cart-popup h3 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 24px;
+    color: #e01b8e;
 }
 
 .cart-popup ul {
     list-style: none;
     margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.cart-popup ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cart-popup p {
     font-size: 18px;
     margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: right;
 }
 
 .cart-popup button {
@@ -110,84 +95,24 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
 .cart-popup button:hover {
     background-color: #000000;
 }
-</style>
-</head>
-<body>
 
-<section class="product-container">
-    <div class="product">
-        <img src="https://via.placeholder.com/300x200" alt="Produkts 1" />
-        <h3>Produkts 1</h3>
-        <p class="price">€29.99</p>
-        <button class="add-to-cart">Pievienot grozam</button>
-    </div>
-    <div class="product">
-        <img src="https://via.placeholder.com/300x200" alt="Produkts 2" />
-        <h3>Produkts 2</h3>
-        <p class="price">€39.99</p>
-        <button class="add-to-cart">Pievienot grozam</button>
-    </div>
-    <div class="product">
-        <img src="https://via.placeholder.com/300x200" alt="Produkts 3" />
-        <h3>Produkts 3</h3>
-        <p class="price">€49.99</p>
-        <button class="add-to-cart">Pievienot grozam</button>
-    </div>
-</section>
-
-<!-- Grozs pop-up piemērs -->
-<div class="cart-popup" id="cartPopup">
-    <h3>Jūsu grozs</h3>
-    <ul id="cartItems"></ul>
-    <p id="cartTotal">Kopā: €0.00</p>
-    <button id="checkoutBtn">Noformēt pasūtījumu</button>
-</div>
-
-<script>
-// Vienkāršs JS, lai pievienotu preces grozam un parādītu pop-up
-const buttons = document.querySelectorAll('.add-to-cart');
-const cartPopup = document.getElementById('cartPopup');
-const cartItemsList = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-
-let cart = [];
-let total = 0;
-
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const productDiv = button.parentElement;
-        const productName = productDiv.querySelector('h3').innerText;
-        const productPriceText = productDiv.querySelector('.price').innerText;
-        const productPrice = parseFloat(productPriceText.replace('€', ''));
-
-        cart.push({ name: productName, price: productPrice });
-        total += productPrice;
-
-        updateCart();
-        showCart();
-    });
-});
-
-function updateCart() {
-    cartItemsList.innerHTML = '';
-    cart.forEach(item => {
-        const li = document.createElement('li');
-        li.innerText = `${item.name} - €${item.price.toFixed(2)}`;
-        cartItemsList.appendChild(li);
-    });
-    cartTotal.innerText = `Kopā: €${total.toFixed(2)}`;
+/* Groza logs aizvēršanas poga */
+.cart-popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e01b8e;
+    cursor: pointer;
+    user-select: none;
 }
-
-function showCart() {
-    cartPopup.style.display = 'block';
-}
-
-</script>
-
-</body>
-</html>
