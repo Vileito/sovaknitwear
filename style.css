@@ -1,4 +1,99 @@
-/* Produkta bloks */
+/* Vispārīgie stili */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+/* Navigācijas josla */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+}
+
+.navbar li {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e01b8e;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Hero sekcija (video fons) */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.logo {
+    z-index: 1;
+    width: 300px;
+    height: auto;
+}
+
+/* Sākuma un veikala sadaļas */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Produktu konteineris */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trīs kolonnas */
+    gap: 20px;
+    padding: 20px 0;
+}
+
 .product {
     background-color: white;
     border-radius: 10px;
@@ -25,22 +120,21 @@
     margin: 10px 0;
 }
 
-/* Pievienot grozam pogas stils */
+/* Pogu stils (izmainīts) */
 .product .add-to-cart {
     padding: 10px 20px;
-    background-color: white;       /* balts fons */
-    color: #e01b8e;                /* rozā teksts */
+    background-color: #e01b8e; /* rozā fons */
+    color: black;              /* melns teksts */
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .product .add-to-cart:hover {
-    background-color: #e01b8e;     /* rozā fons hover */
-    color: white;                  /* balts teksts hover */
+    background-color: #d01070; /* tumšāka rozā hoverā */
+    color: black;              /* teksts paliek melns */
 }
 
 /* Grozs pop-up */
@@ -52,40 +146,24 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    max-height: 60vh;
-    overflow-y: auto;
+    width: 300px;
     display: none;
-    z-index: 9999;
+    z-index: 20;
 }
 
 .cart-popup h3 {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-size: 24px;
-    color: #e01b8e;
 }
 
 .cart-popup ul {
     list-style: none;
     margin-bottom: 20px;
-    padding-left: 0;
-}
-
-.cart-popup ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #ddd;
-    font-size: 18px;
-    color: #333;
-    display: flex;
-    justify-content: space-between;
 }
 
 .cart-popup p {
     font-size: 18px;
     margin-bottom: 20px;
-    font-weight: bold;
-    color: #333;
-    text-align: right;
 }
 
 .cart-popup button {
@@ -95,24 +173,16 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    width: 100%;
-    transition: background-color 0.3s ease;
 }
 
 .cart-popup button:hover {
     background-color: #000000;
 }
 
-/* Groza logs aizvēršanas poga */
-.cart-popup .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #e01b8e;
-    cursor: pointer;
-    user-select: none;
+/* Pēdas (footer) */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
