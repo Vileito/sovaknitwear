@@ -19,22 +19,18 @@ function updateCartPopup() {
 
     cart.forEach((item, index) => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} - €${item.price.toFixed(2)} `;
+
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = `${item.name} - €${item.price.toFixed(2)}`;
 
         const btn = document.createElement('button');
         btn.textContent = '❌';
-        btn.style.marginLeft = '10px';
-        btn.style.background = 'transparent';
-        btn.style.border = 'none';
-        btn.style.cursor = 'pointer';
-        btn.style.fontSize = '16px';
+        btn.title = "Noņemt no groza";
+        btn.addEventListener('click', () => removeFromCartAtIndex(index));
 
-        // Noņem preču pēc tieša indeksa
-        btn.addEventListener('click', () => {
-            removeFromCartAtIndex(index);
-        });
-
+        li.appendChild(nameSpan);
         li.appendChild(btn);
+
         cartItems.appendChild(li);
 
         total += item.price;
@@ -42,11 +38,5 @@ function updateCartPopup() {
 
     totalPrice.textContent = `Kopā: €${total.toFixed(2)}`;
 
-    document.getElementById('cart-popup').style.display = cart.length > 0 ? 'block' : 'none';
-}
+    document.getElementById
 
-function checkout() {
-    alert('Paldies par pirkumu!');
-    cart = [];
-    updateCartPopup();
-}
