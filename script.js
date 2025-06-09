@@ -14,18 +14,31 @@ function updateCartPopup() {
     const cartItems = document.getElementById('cart-items');
     const totalPrice = document.getElementById('total-price');
     let total = 0;
-    
+
     cartItems.innerHTML = '';  // Iztīrām iepriekšējos elementus
-    
+
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `${item.name} - €${item.price.toFixed(2)} <button onclick="removeFromCart('${item.name}')">❌</button>`;
+        li.textContent = `${item.name} - €${item.price.toFixed(2)} `;
+
+        const btn = document.createElement('button');
+        btn.textContent = '❌';
+        btn.style.marginLeft = '10px';
+        btn.style.background = 'transparent';
+        btn.style.border = 'none';
+        btn.style.cursor = 'pointer';
+        btn.style.fontSize = '16px';
+
+        btn.addEventListener('click', () => removeFromCart(item.name));
+
+        li.appendChild(btn);
         cartItems.appendChild(li);
+
         total += item.price;
     });
-    
-    totalPrice.innerHTML = `Kopā: €${total.toFixed(2)}`;
-    
+
+    totalPrice.textContent = `Kopā: €${total.toFixed(2)}`;
+
     // Parādām groza popup, ja ir preces
     document.getElementById('cart-popup').style.display = cart.length > 0 ? 'block' : 'none';
 }
