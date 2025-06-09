@@ -89,7 +89,7 @@ section p {
 /* Produktu konteineris */
 .product-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Trīs kolonnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px 0;
 }
@@ -120,21 +120,21 @@ section p {
     margin: 10px 0;
 }
 
-/* Pogu stils (izmainīts) */
+/* Pogas stils */
 .product .add-to-cart {
     padding: 10px 20px;
-    background-color: #e01b8e; /* rozā fons */
-    color: black;              /* melns teksts */
+    background-color: #e01b8e;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .product .add-to-cart:hover {
-    background-color: #d01070; /* tumšāka rozā hoverā */
-    color: black;              /* teksts paliek melns */
+    background-color: #b71576;
+    color: white;
 }
 
 /* Grozs pop-up */
@@ -146,7 +146,7 @@ section p {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 320px;
     display: none;
     z-index: 20;
 }
@@ -159,6 +159,30 @@ section p {
 .cart-popup ul {
     list-style: none;
     margin-bottom: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding-left: 0;
+}
+
+.cart-popup ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-popup ul li button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #e01b8e;
+    transition: color 0.3s ease;
+}
+
+.cart-popup ul li button:hover {
+    color: #b71576;
 }
 
 .cart-popup p {
@@ -173,6 +197,7 @@ section p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .cart-popup button:hover {
