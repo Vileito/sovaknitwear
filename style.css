@@ -116,25 +116,25 @@ section p {
 
 .product .price {
     font-size: 18px;
-    color: black;
+    color: black; /* labots no "blakc" uz "black" */
     margin: 10px 0;
 }
 
-/* Pogas stils */
+/* Pogu stils - rozā fons, melns teksts */
 .product .add-to-cart {
     padding: 10px 20px;
-    background-color: #e01b8e;
-    color: black;
+    background-color: #e01b8e; /* rozā fons */
+    color: black; /* melns teksts */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .product .add-to-cart:hover {
-    background-color: #b71576;
-    color: white;
+    background-color: #b3156a; /* tumšāka rozā hover */
+    color: white; /* balts teksts hoverā */
 }
 
 /* Grozs pop-up */
@@ -146,7 +146,7 @@ section p {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    width: 300px;
     display: none;
     z-index: 20;
 }
@@ -159,12 +159,10 @@ section p {
 .cart-popup ul {
     list-style: none;
     margin-bottom: 20px;
-    max-height: 200px;
-    overflow-y: auto;
     padding-left: 0;
 }
 
-.cart-popup ul li {
+.cart-popup li {
     margin-bottom: 10px;
     font-size: 18px;
     display: flex;
@@ -172,25 +170,28 @@ section p {
     align-items: center;
 }
 
-.cart-popup ul li button {
+/* Krustiņa poga grozā */
+.cart-popup li button {
     background: transparent;
     border: none;
-    cursor: pointer;
-    font-size: 20px;
     color: #e01b8e;
+    font-size: 20px;
+    cursor: pointer;
     transition: color 0.3s ease;
 }
 
-.cart-popup ul li button:hover {
-    color: #b71576;
+.cart-popup li button:hover {
+    color: #b3156a;
 }
 
+/* Kopējā cena */
 .cart-popup p {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
-.cart-popup button {
+/* Groza pogas stilizācija */
+.cart-popup button.checkout-btn {
     padding: 10px 20px;
     background-color: #e01b8e;
     color: #fcfcfc;
@@ -198,9 +199,10 @@ section p {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.cart-popup button:hover {
+.cart-popup button.checkout-btn:hover {
     background-color: #000000;
 }
 
