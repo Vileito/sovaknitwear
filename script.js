@@ -5,11 +5,8 @@ function addToCart(productName, price) {
     updateCartPopup();
 }
 
-function removeFromCart(productName) {
-    const index = cart.findIndex(item => item.name === productName);
-    if (index !== -1) {
-        cart.splice(index, 1);
-    }
+function removeFromCartAtIndex(index) {
+    cart.splice(index, 1);
     updateCartPopup();
 }
 
@@ -20,7 +17,7 @@ function updateCartPopup() {
 
     cartItems.innerHTML = '';
 
-    cart.forEach((item, i) => {
+    cart.forEach((item, index) => {
         const li = document.createElement('li');
         li.textContent = `${item.name} - €${item.price.toFixed(2)} `;
 
@@ -32,9 +29,9 @@ function updateCartPopup() {
         btn.style.cursor = 'pointer';
         btn.style.fontSize = '16px';
 
+        // Noņem preču pēc tieša indeksa
         btn.addEventListener('click', () => {
-            cart.splice(i, 1);
-            updateCartPopup();
+            removeFromCartAtIndex(index);
         });
 
         li.appendChild(btn);
