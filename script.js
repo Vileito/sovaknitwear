@@ -1,49 +1,37 @@
-// Groza dati
-const cart = [];
-let total = 0;
+let cart = [];
 
-const cartPopup = document.getElementById('cartPopup');
-const cartItemsList = document.getElementById('cartItems');
-const cartTotal = document.getElementById('cartTotal');
-const closeCartBtn = document.getElementById('closeCart');
+function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    updateCartPopup();
+}
 
-function updateCart() {
-    cartItemsList.innerHTML = '';
-    cart.forEach((item, index) => {
+function removeFromCart(productName) {
+    cart = cart.filter(item => item.name !== productName);
+    updateCartPopup();
+}
+
+function updateCartPopup() {
+    const cartItems = document.getElementById('cart-items');
+    const totalPrice = document.getElementById('total-price');
+    let total = 0;
+    
+    cartItems.innerHTML = '';  // Iztīrām iepriekšējos elementus
+    
+    cart.forEach(item => {
         const li = document.createElement('li');
-        li.innerHTML = `
-            <span>${item.name}</span>
-            <span>€${item.price.toFixed(2)}</span>
-        `;
-        cartItemsList.appendChild(li);
+        li.innerHTML = `${item.name} - €${item.price.toFixed(2)} <button onclick="removeFromCart('${item.name}')">❌</button>`;
+        cartItems.appendChild(li);
+        total += item.price;
     });
-    cartTotal.innerText = `Kopā: €${total.toFixed(2)}`;
+    
+    totalPrice.innerHTML = `Kopā: €${total.toFixed(2)}`;
+    
+    // Parādām groza popup, ja ir preces
+    document.getElementById('cart-popup').style.display = cart.length > 0 ? 'block' : 'none';
 }
 
-function showCart() {
-    cartPopup.style.display = 'block';
+function checkout() {
+    alert('Paldies par pirkumu!');
+    cart = [];  // Tīram grozu pēc maksājuma
+    updateCartPopup();  // Atjaunojam groza skatījumu
 }
-
-function hideCart() {
-    cartPopup.style.display = 'none';
-}
-
-closeCartBtn.addEventListener('click', hideCart);
-
-// Pievienot klikšķa notikumu visām pogām
-document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', () => {
-        const product = button.closest('.product');
-        const name = product.querySelector('h3').innerText;
-        const priceText = product.querySelector('.price').innerText;
-        const price = parseFloat(priceText.replace('€', ''));
-
-        // Pievienot grozam
-        cart.push({ name, price });
-        total += price;
-
-        updateCart();
-        showCart();
-    });
-});
-
